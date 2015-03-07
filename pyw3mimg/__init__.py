@@ -30,14 +30,14 @@ class W3MImageDisplay(object):
         """
         Arguments:
         - `n`: image index(?) n >= 1
-        - `x`: 
-        - `y`:
-        - `w`:
-        - `h`:
-        - `sx`:
-        - `sy`:
-        - `sw`:
-        - `sh`:
+        - `x`: screen axis x
+        - `y`: screen axis y
+        - `w`: scaled width
+        - `h`: scaled height
+        - `sx`: sampling startpoint x
+        - `sy`: sampling startpoint y
+        - `sw`: sampling width
+        - `sh`: sampling height
         - `path`: path of image file
         """
         self._draw(0, path, n, x, y, w, h, sx, sy, sw, sh)
@@ -46,14 +46,14 @@ class W3MImageDisplay(object):
         """
         Arguments:
         - `n`: image index(?) n >= 1
-        - `x`:
-        - `y`:
-        - `w`:
-        - `h`:
-        - `sx`:
-        - `sy`:
-        - `sw`:
-        - `sh`:
+        - `x`: screen axis x
+        - `y`: screen axis y
+        - `w`: scaled width
+        - `h`: scaled height
+        - `sx`: sampling startpoint x
+        - `sy`: sampling startpoint y
+        - `sw`: sampling width
+        - `sh`: sampling height
         - `path`: path of image file
         """
         self._draw(1, path, n, x, y, w, h, sx, sy, sw, sh)
