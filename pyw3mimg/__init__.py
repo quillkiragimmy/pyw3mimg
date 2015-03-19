@@ -17,6 +17,10 @@ class W3MImageDisplay(object):
         self._auto_sync = auto_sync
         self._proc = Popen(self._path, shell=True, stdin=PIPE, stdout=PIPE)
 
+    def get_term_size(self):
+        output = Popen([self._path, "-test"], stdout=PIPE)
+        return output.stdout.readline().split(' ')
+
     def write(self, s):
         self._proc.stdin.write(s)
         self._proc.stdin.flush()
