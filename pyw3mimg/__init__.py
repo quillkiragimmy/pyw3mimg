@@ -16,6 +16,7 @@ class W3MImageDisplay(object):
         self._path = path
         self._auto_sync = auto_sync
         self._proc = Popen(self._path, shell=True, stdin=PIPE, stdout=PIPE)
+        self.term_size = self.get_term_size()
 
     def get_term_size(self):
         output = Popen([self._path, "-test"], stdout=PIPE)
@@ -83,6 +84,10 @@ class W3MImageDisplay(object):
         return (int(wh[0]), int(wh[1]))
 
     def clear(self, x, y, w, h):
-        self.write('6;%d;%d;%d;%d\n', x, y, w, h)
+        self.write('6;%d;%d;%d;%d\n'% (x, y, w, h))
+
+    def clear_term(self):
+        self.write('6;%d;%d;%d;%d\n'% (0, 0, self.term_size[0], self.term_size[1]))
+        self.sync()
 
 
